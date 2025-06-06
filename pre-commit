@@ -1,0 +1,7 @@
+#!/bin/bash
+
+commit_msg=$(cat "$1")
+if [ -z "$commit_msg" ]; then
+echo "oшибка"
+exit 1
+fi
