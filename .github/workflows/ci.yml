@@ -1,0 +1,20 @@
+name: Simulate CI/CD
+
+# Когда запускать workflow:
+on:
+  push:
+    branches: [ main ]            # При пуше в main
+  pull_request:
+    branches: [ main ]            # При открытии PR в main
+
+# Что делать:
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest        # Среда выполнения
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3   # Получить код проекта
+
+      - name: Say Hello
+        run: echo "Hello CI/CD!"    # Команда, которая выполнится
